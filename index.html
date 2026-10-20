@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAlpha Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="music-container">
+        <!-- Header -->
+        <div class="player-header">
+            <h2>CodeAlpha Player</h2>
+            <p id="track-number">Song 1 of 3</p>
+        </div>
+
+        <!-- Song Art & Info -->
+        <div class="song-info">
+            <div class="img-container">
+                <img id="cover" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=500" alt="Album Art">
+            </div>
+            <h1 id="title">Acoustic Breeze</h1>
+            <h3 id="artist">Bensound</h3>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="time-container">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+
+        <!-- Audio Element -->
+        <audio id="audio" src="https://www.bensound.com/bensound-music/bensound-acousticbreeze.mp3"></audio>
+
+        <!-- Controls -->
+        <div class="navigation">
+            <button id="prev" class="action-btn" onclick="prevSong()">
+                <i class="fas fa-backward"></i>
+            </button>
+            <button id="play" class="action-btn action-btn-big" onclick="togglePlaySong()">
+                <i class="fas fa-play" id="play-icon"></i>
+            </button>
+            <button id="next" class="action-btn" onclick="nextSong()">
+                <i class="fas fa-forward"></i>
+            </button>
+        </div>
+
+        <!-- Volume Control -->
+        <div class="volume-container">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="1" oninput="setVolume(this.value)">
+        </div>
+
+        <!-- Playlist -->
+        <div class="playlist">
+            <h3>Playlist</h3>
+            <ul id="playlist-ul">
+                <li onclick="loadSong(0)">1. Acoustic Breeze - Bensound</li>
+                <li onclick="loadSong(1)">2. Sunny - Bensound</li>
+                <li onclick="loadSong(2)">3. Creative Minds - Bensound</li>
+            </ul>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
